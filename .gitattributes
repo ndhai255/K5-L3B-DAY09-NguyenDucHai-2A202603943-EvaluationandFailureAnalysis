@@ -1,0 +1,5 @@
+# eval_set_sha is a hash of the file BYTES: keep hashed eval files and reports LF on every OS,
+# otherwise a Windows checkout (core.autocrlf=true) changes the sha and the gate refuses to compare.
+src/data/eval/*.jsonl text eol=lf
+src/data/eval/*.json text eol=lf
+src/reports/**/*.json text eol=lf

@@ -1,0 +1,3 @@
+# Bonus only (not installed by CI): port of 3 graders to Inspect AI, see docs/bonus_inspect.md
+-r requirements-lab9.txt
+inspect-ai==0.3.291

@@ -43,3 +43,4 @@ sections:
     baseline_v2: reports/baseline_v2.json
     scorecard: python -m lab9.mutation --spec config/metric_spec_v2.yaml --baseline reports/baseline_v2.json
     traps: python -m lab9.traps
+    bonus_inspect: python -m lab9.bonus_inspect   # Inspect AI port of 3 graders (requirements-bonus.txt)

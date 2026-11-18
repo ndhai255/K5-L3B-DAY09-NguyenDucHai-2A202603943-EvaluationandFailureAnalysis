@@ -103,3 +103,9 @@ Trap tự dựng thêm, đều bị chặn: dòng trùng lặp thay cho dòng fa
 ### Giới hạn cỡ mẫu
 
 Một bug chỉ xuất hiện ở 1/3 seed (`rare`: `seed % 3 == 0`) **không phát hiện ổn định với 5 seed**: bộ 11/22/33/44/55 chỉ có seed 33 chia hết cho 3; một bộ 5 seed khác có thể chứa 0, 1 hoặc 2 seed như vậy, nên cùng một bug lúc lộ lúc không, và với LLM thật xác suất bỏ sót trên một item là (2/3)^5 ≈ 13%. Gate hiện chặn được bản `rare` công khai nhờ seed 33 và `max_new_failures`, nhưng tôi **không hạ ngưỡng** để "bắt" nó cho chắc. Cách đúng là tăng số seed (k ≥ 10 cho pass^k) hoặc thêm item nhắm vào failure mode đó.
+
+---
+
+## Bonus: port grader sang Inspect AI
+
+3 grader (`approval_bypass`, `refund_amount_correct`, `reply_amount_matches_ledger`) được viết lại thành `@scorer` của Inspect AI 0.3.291, chạy với `mockllm/model` (offline) trên đúng các cặp (item, seed). Khớp với pydantic-evals **1050/1050** lượt chấm (v1, 5 shape) và **3360/3360** (v2, 8 shape). Đối chứng âm với regex bị làm hỏng cho 10 dòng lệch, exit 1. Chi tiết: `docs/bonus_inspect.md`, report `reports/bonus_inspect_compare*.json`.
