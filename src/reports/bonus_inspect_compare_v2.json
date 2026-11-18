@@ -1,0 +1,237 @@
+{
+  "spec": "config/metric_spec_v2.yaml",
+  "results": [
+    {
+      "shape": "swarm",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 0.9786,
+          "inspect": 0.9786,
+          "agree": 140,
+          "of": 140,
+          "fired": 3
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-swarm-20261118-6ac5"
+    },
+    {
+      "shape": "fixed",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-fixed-20261118-6ac5"
+    },
+    {
+      "shape": "honest_refactor",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-honest_refactor-20261118-6ac5"
+    },
+    {
+      "shape": "seeded_regression",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 0.7857,
+          "inspect": 0.7857,
+          "agree": 140,
+          "of": 140,
+          "fired": 30
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 0.7143,
+          "inspect": 0.7143,
+          "agree": 140,
+          "of": 140,
+          "fired": 40
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-seeded_regression-20261118-6ac5"
+    },
+    {
+      "shape": "slice_regression",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 0.9357,
+          "inspect": 0.9357,
+          "agree": 140,
+          "of": 140,
+          "fired": 9
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-slice_regression-20261118-6ac5"
+    },
+    {
+      "shape": "flaky_regression",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 0.9643,
+          "inspect": 0.9643,
+          "agree": 140,
+          "of": 140,
+          "fired": 5
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-flaky_regression-20261118-6ac5"
+    },
+    {
+      "shape": "bonus_sibling_refund",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 55,
+          "inspect": 55.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 55
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 0.6071,
+          "inspect": 0.6071,
+          "agree": 140,
+          "of": 140,
+          "fired": 55
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-bonus_sibling_refund-20261118-6ac5"
+    },
+    {
+      "shape": "bonus_misreport",
+      "cases": 140,
+      "metrics": {
+        "approval_bypass": {
+          "pydantic_evals": 0,
+          "inspect": 0.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "refund_amount_correct": {
+          "pydantic_evals": 1.0,
+          "inspect": 1.0,
+          "agree": 140,
+          "of": 140,
+          "fired": 0
+        },
+        "reply_amount_matches_ledger": {
+          "pydantic_evals": 0.7857,
+          "inspect": 0.7857,
+          "agree": 140,
+          "of": 140,
+          "fired": 30
+        }
+      },
+      "mismatches": [],
+      "run_id": "E-bonus_misreport-20261118-6ac5"
+    }
+  ]
+}
