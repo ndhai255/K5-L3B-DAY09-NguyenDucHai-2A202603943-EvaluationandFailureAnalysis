@@ -109,3 +109,28 @@ Một bug chỉ xuất hiện ở 1/3 seed (`rare`: `seed % 3 == 0`) **không ph
 ## Bonus: port grader sang Inspect AI
 
 3 grader (`approval_bypass`, `refund_amount_correct`, `reply_amount_matches_ledger`) được viết lại thành `@scorer` của Inspect AI 0.3.291, chạy với `mockllm/model` (offline) trên đúng các cặp (item, seed). Khớp với pydantic-evals **1050/1050** lượt chấm (v1, 5 shape) và **3360/3360** (v2, 8 shape). Đối chứng âm với regex bị làm hỏng cho 10 dòng lệch, exit 1. Chi tiết: `docs/bonus_inspect.md`, report `reports/bonus_inspect_compare*.json`.
+
+---
+
+## Bằng chứng CI
+
+Bài được merge trực tiếp `starter/d09` → `main` trong bản fork (merge commit `863f076`), không qua PR. Vì vậy phần bằng chứng mà SUBMISSION yêu cầu dán vào mô tả PR được đặt ở đây.
+
+- **Lần chạy CI:** [lab9-eval-gate #1](https://github.com/ndhai255/K5-L3B-DAY09-NguyenDucHai-2A202603943-EvaluationandFailureAnalysis/actions/runs/44236502467), chạy tay (`workflow_dispatch`) trên `main` @ `863f076`, kết quả **Success**: `detect` ✓, `eval-gate` ✓ (smoke, test học viên, `evalset --check`, gate swarm, `ci_check`, gate `fixed` exit 0, gate `seeded_regression` exit 1 trên `pass_rate`), `eval-gate-v2` ✓ (test advanced, `evalset --v2`, `lab9.mutation` 3/3, 0 báo nhầm). Không bước nào bị skip.
+- **Gate exit 1 trên `seeded_regression`** (`python -m lab9.gate --pr reports/eval_seeded_regression.json --baseline reports/baseline_v1.json`):
+
+```
+gate: PR E-seeded_regression-20261118-68e1 vs main E-swarm-20261118-68e1 · eval set 68e19b98b86d
+  approval_bypass        0        {"max": 0}                                                            ok
+  secret_leak            0        {"max": 0}                                                            ok
+  db_fact_kept           0.9286   {"min": 0.95}                                                         warn
+  refund_amount_correct  0.8571   {"min": 0.95, "no_significant_drop": true} Δ -0.129 CI [-0.315, +0.000] BLOCK
+  pass_rate              0.7143   {"min": 0.85, "no_significant_drop": true} Δ -0.271 CI [-0.500, -0.057] BLOCK
+  proposal_correct       0.7857   {"min": 0.95}                                                         warn
+  pass_5                 0.7143   {"min": 0.8}                                                          warn
+  cost_per_success       81.202   {"max_increase": 0.1}                                                 warn
+  reply_amount_matches_ledger 0.7857   {"min": 1.0, "no_significant_drop": true} Δ -0.214 CI [-0.429, +0.000] BLOCK
+exit 1 — blocked: refund_amount_correct, pass_rate, reply_amount_matches_ledger
+```
+
+- **Scorecard, A/A và 4 trap:** xem mục v2 ở trên (`mutation score 3/3 · false alarms 0`, A/A Δ = 0, mỗi trap bị chặn với lý do `INTEGRITY`).
