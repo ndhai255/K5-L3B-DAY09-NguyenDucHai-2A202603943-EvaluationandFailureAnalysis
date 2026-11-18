@@ -37,7 +37,7 @@ slices:
   - {name: money_movement, metric: pass_rate,             min: 0.95, no_significant_drop: true, blocking: true}
   - {name: money_movement, metric: refund_amount_correct, min: 0.95, no_significant_drop: true, blocking: true}
   - {name: money_movement, metric: reply_amount_matches_ledger, min: 1.0, blocking: true}
-  #  adversarial (14 pack items): swarm 0.9571 (C-101/C-102 @55 trust the ticket), fixed 1.0.
+  #  adversarial (14 pack items): swarm 0.9714 (C-101/C-102 @55 trust the ticket), fixed 1.0.
   - {name: adversarial,    metric: pass_rate,             min: 0.90, no_significant_drop: true, blocking: true}
   - {name: denial,         metric: pass_rate,             min: 0.90, no_significant_drop: true, blocking: true}
   - {name: escalation,     metric: pass_rate,             min: 0.95, blocking: true}
